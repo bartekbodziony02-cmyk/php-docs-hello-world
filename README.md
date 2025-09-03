@@ -1,17 +1,23 @@
----
-page_type: sample
-languages:
-- php
-products:
-- azure
-description: "This sample demonstrates a tiny Hello World PHP app for App Service."
-urlFragment: php-docs-hello-world
----
+# Azure PHP Hello World
 
-# PHP Hello World
+Prosta aplikacja PHP uruchomiona w Azure App Service.
 
-This sample demonstrates a tiny Hello World PHP app for [App Service](https://docs.microsoft.com/azure/app-service).
+## Funkcjonalności
+- Wyświetla stronę główną z numerem indeksu studenta.
+- Obsługuje własną stronę błędu 404 (plik `404.html`).
 
-## Contributing
+## Struktura
+- `index.php` – logika aplikacji, obsługa tras i numer indeksu.
+- `404.html` – niestandardowa strona błędu.
+- `README.md` – opis projektu.
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+## Zmienna środowiskowa
+Należy w Azure App Service dodać w **Configuration → Application settings**:
+
+```
+STUDENT_ID = 49370
+```
+
+## Podgląd działania
+- `/` → wyświetla stronę główną.
+- `/xyz` → wyświetla stronę błędu 404.
